@@ -81,14 +81,12 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
         for (jsonElement in resultsArray) {
             try {
-                println("XABLACU1 $jsonElement")
                 val jsonObject = jsonElement.asJsonObject
                 val musicModel = MusicModel(
                     jsonObject.getAsJsonPrimitive("trackName").asString,
                     jsonObject.getAsJsonPrimitive("collectionName").asString,
                     jsonObject.getAsJsonPrimitive("releaseDate").asString.toString().split("T")[0],
                     )
-                println("XABLACU2 $jsonObject")
 
                 musicList.add(musicModel)
             }catch (e: Exception){
