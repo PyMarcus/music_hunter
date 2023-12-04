@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/gray">
+
+    <!--searchbar-->
+    <com.google.android.material.textfield.TextInputLayout
+        style="?attr/textInputOutlinedStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        app:endIconMode="custom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:textColorHint="@color/white"
+        android:padding="8dp"
+        app:counterEnabled="true"
+        app:endIconDrawable="@drawable/search_image"
+        app:endIconTint="@color/white"
+        app:counterMaxLength="50"
+        app:counterTextColor="@color/white"
+        app:boxCornerRadiusTopStart="30dp"
+        app:boxStrokeWidth="3dp"
+        app:boxBackgroundColor="@color/black"
+        app:boxStrokeWidthFocused="2dp"
+        app:boxStrokeColor="@color/white"
+        tools:ignore="MissingConstraints">
+
+
+    <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--end search bar-->
+
+    <!-- recycleview -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycle"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/activity_song_item"
+        />
+    <!-- end recycleview-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
